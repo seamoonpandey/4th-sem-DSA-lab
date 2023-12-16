@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib> 
+using namespace std;
 
 class DynamicArray {
 private:
@@ -6,32 +8,33 @@ private:
     int size;
 
 public:
-    DynamicArray(int initialSize) {
-        size = initialSize;
-        array = new int[size];
-    }
+    DynamicArray(int initialSize) : size(initialSize), array(new int[initialSize]) {}
 
     ~DynamicArray() {
         delete[] array;
     }
 
     void fillArray() {
-        std::cout << "Fill the array (with spaces between the elements): ";
+        cout << "Fill the array (with spaces between the elements): ";
         for (int i = 0; i < size; i++) {
-            std::cin >> array[i];
+            cin >> array[i];
+            if (cin.fail()) {
+                cerr << "Invalid input. Exiting." << endl;
+                exit(EXIT_FAILURE);
+            }
         }
     }
 
-    void displayArray() {
+    void displayArray() const {
         for (int i = 0; i < size; i++) {
-            std::cout << array[i] << "\t";
+            cout << array[i] << "\t";
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 
     void insertElement(int index, int value) {
         if (index < 0 || index > size) {
-            std::cout << "Invalid index for insertion" << std::endl;
+            cerr << "Invalid index for insertion" << endl;
             return;
         }
 
@@ -54,7 +57,7 @@ public:
 
     void deleteElement(int index) {
         if (index < 0 || index >= size || size <= 0) {
-            std::cout << "Invalid index for deletion" << std::endl;
+            cerr << "Invalid index for deletion" << endl;
             return;
         }
 
@@ -76,29 +79,52 @@ public:
 
 int main() {
     int initialSize;
-    std::cout << "Enter the size of the array: ";
-    std::cin >> initialSize;
+    cout << "Enter the size of the array: ";
+    cin >> initialSize;
+
+    if (cin.fail() || initialSize <= 0) {
+        cerr << "Invalid array size. Exiting." << endl;
+        return EXIT_FAILURE;
+    }
 
     DynamicArray dynamicArray(initialSize);
 
     dynamicArray.fillArray();
-    std::cout << "Initial array: ";
+    cout << "Initial array: ";
     dynamicArray.displayArray();
 
     int insertIndex, insertValue;
-    std::cout << "Enter the index you want to insert in the array: ";
-    std::cin >> insertIndex;
-    std::cout << "Enter the value you want to insert in the array: ";
-    std::cin >> insertValue;
+    cout << "Enter the index you want to insert in the array: ";
+    cin >> insertIndex;
+
+    if (cin.fail()) {
+        cerr << "Invalid input. Exiting." << endl;
+        return EXIT_FAILURE;
+    }
+
+    cout << "Enter the value you want to insert in the array: ";
+    cin >> insertValue;
+
+    if (cin.fail()) {
+        cerr << "Invalid input. Exiting." << endl;
+        return EXIT_FAILURE;
+    }
+
     dynamicArray.insertElement(insertIndex, insertValue);
-    std::cout << "After inserting " << insertValue << " at index " << insertIndex << ": ";
+    cout << "After inserting " << insertValue << " at index " << insertIndex << ": ";
     dynamicArray.displayArray();
 
     int deleteIndex;
-    std::cout << "Enter the index you want to delete from the array: ";
-    std::cin >> deleteIndex;
+    cout << "Enter the index you want to delete from the array: ";
+    cin >> deleteIndex;
+
+    if (cin.fail()) {
+        cerr << "Invalid input. Exiting." << endl;
+        return EXIT_FAILURE;
+    }
+
     dynamicArray.deleteElement(deleteIndex);
-    std::cout << "After deleting an element at index " << deleteIndex << ": ";
+    cout << "After deleting an element at index " << deleteIndex << ": ";
     dynamicArray.displayArray();
 
     return 0;
