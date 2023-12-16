@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int size; // Global variable for the array size
+int size;
 
 void fillArray(int array[]);
 void displayArray(int array[]);
