@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int size;
+static int size;
 
 void fillArray(int array[]);
 void displayArray(int array[]);
