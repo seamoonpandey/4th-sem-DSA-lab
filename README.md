@@ -1,5 +1,8 @@
-# 4th-sem-DSA-lab
+# DSA 4th sem practice may be
 
-**What is a Data Structure?**
+***Data Structures:***
+Data structures are essential components in computer science that organize and store data to perform operations efficiently. They provide a way to manage and manipulate data, facilitating tasks like searching, sorting, and retrieving information.
 
-- Data Structure is a way to organized data in such a way that it can be used efficiently. Following terms are foundation terms of a data structure.
+Some common data structures include:(only that we read till the date)
+
+1. Arrays: Ordered collections of elements.
