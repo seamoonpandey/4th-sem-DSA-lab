@@ -75,6 +75,9 @@ Is the stack empty? No
 **Images:**
 ![image](https://github.com/seamoonpandey/4th-sem-DSA-lab/assets/115852972/49fa5015-571e-4dae-96a9-c07ff7c0d731)
 
+![image](https://github.com/seamoonpandey/4th-sem-DSA-lab/assets/115852972/aa0be846-1e35-47dc-8c27-3849639b6006)
+
+
 
 
 **Conclusion:**
