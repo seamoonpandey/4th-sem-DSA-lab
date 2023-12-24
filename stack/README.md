@@ -1,0 +1,80 @@
+# Lab Report: Stack Implementation
+
+**Problem Statement:**
+
+Handle Stack operations using array implementation method
+
+**Background Theory:**
+
+A stack is a fundamental data structure operating on the Last In, First Out (LIFO) principle. The stack's primary operations include push, which adds an element to the top, pop, which removes the top element, and peek, which allows viewing the top element without removal.
+
+This implementation uses an array to represent the stack. The array is dynamically managed to accommodate varying numbers of elements, ensuring flexibility in the stack's size.
+
+**Algorithm:**
+
+**Step 1: Initialization**
+
+- Create an array with a specified or default capacity.
+- Initialize the top index to -1.
+
+**Step 2: Push Operation**
+
+- **Step 2.1:** Check if the stack is full.
+  - If true, go to Step 2.2; otherwise, continue.
+- **Step 2.2:** Resize the array.
+- **Step 2.3:** Increment the top index (`top`) by 1.
+- **Step 2.4:** Add the element to the array.
+
+**Step 3: Pop Operation**
+
+- **Step 3.1:** Check if the stack is empty.
+  - If true, go to Step 3.2; otherwise, continue.
+- **Step 3.2:** Report stack underflow.
+- **Step 3.3:** Retrieve the top element.
+- **Step 3.4:** Decrement the top index (`top`) by 1.
+- **Step 3.5:** Return the retrieved element.
+
+**Step 4: Peek Operation**
+
+- **Step 4.1:** Check if the stack is empty.
+  - If true, go to Step 4.2; otherwise, continue.
+- **Step 4.2:** Report stack underflow.
+- **Step 4.3:** Return the top element without removal.
+
+**Step 5: Resize Operation**
+
+- **Step 5.1:** Create a new array with double the current capacity.
+- **Step 5.2:** Copy existing elements to the new array.
+- **Step 5.3:** Free the memory of the old array.
+- **Step 5.4:** Update the array reference and capacity.
+
+**Flowchart**
+
+![image](https://github.com/seamoonpandey/4th-sem-DSA-lab/assets/115852972/f7e4a5fa-7e92-494d-80ea-86cb0f59e7dc)
+
+![image](https://github.com/seamoonpandey/4th-sem-DSA-lab/assets/115852972/4b5641ae-f16a-4f06-a78f-c705f21113ee)
+
+**Sample Input:**
+
+```C++
+Push 10
+Push 20
+Push 30
+```
+
+**Sample Output:**
+
+```C++
+Top element: 30
+Popped element: 30
+Popped element: 20
+Is the stack full ? No
+Is the stack empty? No
+```
+
+**Images:**
+
+
+**Conclusion:**
+
+In this lab, we successfully implemented a stack, providing a versatile data structure capable of handling various scenarios. The step-by-step algorithms elucidate the intricacies of each operation, including push, pop, and peek. The resizing mechanism ensures the stack dynamically adjusts its size to accommodate elements efficiently. This implementation serves as a fundamental building block for understanding data structures and algorithms.
