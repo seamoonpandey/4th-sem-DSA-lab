@@ -6,3 +6,4 @@ Data structures are essential components in computer science that organize and s
 Some common data structures include:(only that we read till the date)
 
 1. Arrays: Ordered collections of elements.
+2. Stack :LIFO or FILO
