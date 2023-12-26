@@ -77,9 +77,42 @@ Is the stack empty? No
 
 ![image](https://github.com/seamoonpandey/4th-sem-DSA-lab/assets/115852972/aa0be846-1e35-47dc-8c27-3849639b6006)
 
-
-
-
 **Conclusion:**
 
 In this lab, we successfully implemented a stack, providing a versatile data structure capable of handling various scenarios. The step-by-step algorithms elucidate the intricacies of each operation, including push, pop, and peek. The resizing mechanism ensures the stack dynamically adjusts its size to accommodate elements efficiently. This implementation serves as a fundamental building block for understanding data structures and algorithms.
+
+## Applications of Stack
+
+### Conversion from infix expression to postfix expression
+
+**Operators Priority Order:**
+
+1. Highest:
+   - Exponential (^ or **)
+   - Multiplication (* or X)
+   - Division (/)
+2. Lowest:
+   - Addition (+)
+   - Subtraction (-)
+
+**Algorithm Steps:**
+
+1. Initialize an empty stack to hold operators.
+2. Read each item from the input infix expression.
+   - If the item is an operand, append it to the postfix string.
+   - If the item is "(", push it onto the stack.
+   - If the item is an operator:
+     - If the stack is empty or the operator has higher precedence than the one on top of the stack, push it onto the stack.
+     - If the operator has lower precedence than the one on top of the stack, pop the operator from the stack and append it to the postfix string. Then, push the current operator onto the stack.
+   - If the item is ")", pop operators from the stack and append them to the postfix string until a "(" is encountered on the stack (remove "(").
+3. If the end of the infix expression is reached, pop any remaining operators from the stack and append them to the postfix string.
+
+This algorithm ensures that operators are processed based on their precedence and that parentheses are appropriately handled.
+
+### Example
+
+Input Infix Expression: A + (B *C - (D / E ^ F)* G) * H
+
+Output Postfix Expression: ABC*DEF^/G*-H*
+
+This algorithm is commonly used in programming languages, compilers, and calculators to convert infix expressions into a form that is easier to evaluate or parse. If you have any specific questions or need further clarification, feel free to ask!
