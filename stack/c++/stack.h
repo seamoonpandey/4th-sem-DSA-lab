@@ -1,15 +1,18 @@
+#include <iostream>
 using namespace std;
+
+template <typename T>
 class Stack
 {
 private:
-    int *arr;
+    T *arr;
     int top;
     int capacity;
 
 public:
     Stack(int initialCapacity = 5)
     {
-        arr = new int[initialCapacity];
+        arr = new T[initialCapacity];
         top = -1;
         capacity = initialCapacity;
     }
@@ -29,7 +32,7 @@ public:
         return top == capacity - 1;
     }
 
-    void push(int value)
+    void push(T value)
     {
         if (isFull())
         {
@@ -49,12 +52,12 @@ public:
         top--;
     }
 
-    int peek()
+    T peek()
     {
         if (isEmpty())
         {
             cout << "Stack is empty" << endl;
-            return 0;
+            return T(); 
         }
         return arr[top];
     }

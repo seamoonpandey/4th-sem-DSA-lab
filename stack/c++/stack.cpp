@@ -5,7 +5,7 @@
 int main()
 {
     // Example usage
-    Stack myStack;
+    Stack<int> myStack;
 
     myStack.push(10);
     myStack.push(20);
