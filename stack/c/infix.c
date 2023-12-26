@@ -37,13 +37,10 @@ int precedence(char symbol)
 {
 	switch(symbol){
 		case '^':
-			return 2;
 		case '*':
-			return 2;
 		case '/':
 			return 2;
 		case '+':
-			return 1;
 		case '-':
 			return 1;
 		default:
