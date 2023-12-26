@@ -107,12 +107,8 @@ In this lab, we successfully implemented a stack, providing a versatile data str
    - If the item is ")", pop operators from the stack and append them to the postfix string until a "(" is encountered on the stack (remove "(").
 3. If the end of the infix expression is reached, pop any remaining operators from the stack and append them to the postfix string.
 
-This algorithm ensures that operators are processed based on their precedence and that parentheses are appropriately handled.
-
 ### Example
 
 Input Infix Expression: A + (B *C - (D / E ^ F)* G) * H
 
 Output Postfix Expression: ABC*DEF^/G*-H*
-
-This algorithm is commonly used in programming languages, compilers, and calculators to convert infix expressions into a form that is easier to evaluate or parse. If you have any specific questions or need further clarification, feel free to ask!
