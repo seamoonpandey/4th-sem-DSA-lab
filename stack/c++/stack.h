@@ -42,14 +42,13 @@ public:
         arr[++top] = value;
     }
 
-    void pop()
+    T pop()
     {
         if (isEmpty())
         {
-            cout << "Stack underflow" << endl;
-            return;
+            throw "Stack underflow";
         }
-        top--;
+        return arr[top--];
     }
 
     T peek()
