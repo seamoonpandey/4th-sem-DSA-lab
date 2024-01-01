@@ -119,22 +119,3 @@ void deleteNode(Linkedlist *list, int index)
     temp2->next = temp1->next;
     free(temp1);
 }
-
-int main()
-{
-    Linkedlist list = {.head = NULL};
-
-    insertNodeAtEnd(&list, 1);
-    insertNodeAtEnd(&list, 2);
-    insertNodeAtEnd(&list, 3);
-    insertNodeAtEnd(&list, 100);
-
-    printList(&list);
-    insertNodeAtStart(&list, 22);
-    printList(&list);
-    insertNodeAtThatIndex(&list, 2, 7);
-    printList(&list);
-
-    deleteNode(&list, 3);
-    printList(&list);
-}
