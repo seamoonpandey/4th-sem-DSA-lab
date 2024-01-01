@@ -7,14 +7,17 @@ struct Node
     struct Node *next;
 };
 
+typedef struct Node Node;
+
 struct LinkedList
 {
-    struct Node *head;
+    Node *head;
 };
+typedef struct LinkedList Linkedlist;
 
-void insertNodeAtEnd(struct LinkedList *list, int data)
+void insertNodeAtEnd(Linkedlist *list, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    Node *newNode = (Node *)malloc(sizeof(Node));
 
     if (newNode == NULL)
     {
@@ -31,7 +34,7 @@ void insertNodeAtEnd(struct LinkedList *list, int data)
         return;
     }
 
-    struct Node *current = list->head;
+    Node *current = list->head;
     while (current->next != NULL)
     {
         current = current->next;
@@ -40,21 +43,49 @@ void insertNodeAtEnd(struct LinkedList *list, int data)
     current->next = newNode;
 }
 
-void printList(struct LinkedList *list)
+void insertNodeAtStart(Linkedlist *list, int data)
 {
-    struct Node *current = list->head;
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    if (newNode == NULL)
+    {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(1);
+    }
+    newNode->data = data;
+    newNode->next = list->head;
+    list->head = newNode;
+    return;
+}
+
+void insertNodeAtThatIndex(Linkedlist *list, int index, int data)
+{
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    newNode->data = data;
+    Node *currentNode = list->head;
+
+    for (int i = 0; i < index - 1; i++)
+    {
+        currentNode = currentNode->next;
+    }
+    newNode->next = currentNode->next;
+    currentNode->next = newNode;
+}
+
+void printList(Linkedlist *list)
+{
+    Node *current = list->head;
     while (current != NULL)
     {
         printf("%d ", current->data);
         current = current->next;
     }
-    printf('\n');
+    printf("\n");
     return;
 }
 
 int main()
 {
-    struct LinkedList list = {.head = NULL}, list2 = {.head = NULL};
+    Linkedlist list = {.head = NULL}, list2 = {.head = NULL};
 
     insertNodeAtEnd(&list, 1);
     insertNodeAtEnd(&list, 2);
@@ -62,6 +93,11 @@ int main()
     insertNodeAtEnd(&list, 100);
 
     printList(&list);
-    insertNodeAtEnd(&list2, 99);
-    printList(&list2);
+    insertNodeAtStart(&list, 22);
+    printList(&list);
+    insertNodeAtThatIndex(&list, 2, 7);
+    printList(&list);
+
+    // insertNodeAtEnd(&list2, 99);
+    // printList(&list2);
 }
