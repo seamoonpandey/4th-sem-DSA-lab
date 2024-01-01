@@ -74,6 +74,8 @@ void insertNodeAtThatIndex(Linkedlist *list, int index, int data)
 void printList(Linkedlist *list)
 {
     Node *current = list->head;
+    if (current == NULL)
+        printf("List is already empty");
     while (current != NULL)
     {
         printf("%d ", current->data);
@@ -83,9 +85,44 @@ void printList(Linkedlist *list)
     return;
 }
 
+void deleteNode(Linkedlist *list, int index)
+{
+    Node *temp1 = list->head, *temp2 = {NULL};
+    int ListLen = 0;
+
+    if (temp1 == NULL)
+    {
+        printf("Unable to delete from an empty list");
+        exit(2);
+    }
+
+    while (temp1 != NULL)
+    {
+        temp1 = temp1->next;
+        ListLen++;
+    }
+
+    if (index <= 0 || ListLen < index)
+    {
+        Node *temp = list->head;
+        list->head = list->head->next;
+        free(temp);
+        return;
+    }
+
+    temp1 = list->head;
+    while (index--)
+    {
+        temp2 = temp1;
+        temp1 = temp1->next;
+    }
+    temp2->next = temp1->next;
+    free(temp1);
+}
+
 int main()
 {
-    Linkedlist list = {.head = NULL}, list2 = {.head = NULL};
+    Linkedlist list = {.head = NULL};
 
     insertNodeAtEnd(&list, 1);
     insertNodeAtEnd(&list, 2);
@@ -98,6 +135,6 @@ int main()
     insertNodeAtThatIndex(&list, 2, 7);
     printList(&list);
 
-    // insertNodeAtEnd(&list2, 99);
-    // printList(&list2);
+    deleteNode(&list, 3);
+    printList(&list);
 }
