@@ -1,51 +1,65 @@
-#include <iostream>
+#include<iostream>
+using namespace std;
 
-template <typename T>
-class Node {
-    T data;
-    Node<T> *next;
+class Node
+{
+    int data;
+    Node *next;
 
 public:
-    Node(T data) : data(data), next(nullptr) {}
+    Node(int data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
 
-    template <typename U>
-    friend class LinkedList;
+    friend class Linkedlist;
 };
 
-template <typename T>
-class LinkedList {
-    Node<T> *head;
+class Linkedlist
+{
+    Node *head;
 
 public:
-    LinkedList() : head(nullptr) {}
+    Linkedlist() { head = NULL; }
 
-    void insertNodeAtEnd(T data) {
-        Node<T> *newNode = new Node<T>(data);
+    // end of the linked list
+    void insertNodeAtEnd(int data)
+    {
+        Node *newNode = new Node(data);
 
-        if (head == nullptr) {
+        if (head == NULL)
+        {
             head = newNode;
             return;
         }
 
-        Node<T> *temp = head;
-        while (temp->next != nullptr) {
+        Node *temp = head;
+        while (temp->next != NULL)
+        {
             temp = temp->next;
         }
         temp->next = newNode;
     }
 
-    void insertNodeAtStart(T data) {
-        Node<T> *newNode = new Node<T>(data);
+    // start of the linked list
+    void insertNodeAtStart(int data)
+    {
+        Node *newNode = new Node(data);
 
         newNode->next = head;
         head = newNode;
+        return;
     }
 
-    void insertNodeAtThatIndex(T data, int index) {
-        Node<T> *newNode = new Node<T>(data);
-        Node<T> *currentNode = head;
+    // insertion at certain position/index
+    void insertNodeAtThatIndex(int data, int index)
+    {
+        Node *newNode = new Node(data);
+        Node *currentNode = head;
 
-        for (int i = 0; i < index - 1; i++) {
+        for (int i = 0; i < index - 1; i++)
+        {
             currentNode = currentNode->next;
         }
 
@@ -53,28 +67,34 @@ public:
         currentNode->next = newNode;
     }
 
-    void deleteNode(int index) {
-        Node<T> *temp1 = head, *temp2 = nullptr;
-        int listLen = 0;
+    // deleteNode at given position
+    void deleteNode(int index)
+    {
+        Node *temp1 = head, *temp2 = NULL;
+        int ListLen = 0;
 
-        if (head == nullptr) {
+        if (head == NULL)
+        {
             throw "List empty";
         }
 
-        while (temp1 != nullptr) {
+        while (temp1 != NULL)
+        {
             temp1 = temp1->next;
-            listLen++;
+            ListLen++;
         }
 
-        if (index <= 0 || listLen < index) {
-            Node<T> *temp = head;
+        if (index <= 0 || ListLen < index)
+        {
+            Node *temp = head;
             head = head->next;
             delete temp;
             return;
         }
 
         temp1 = head;
-        while (index--) {
+        while (index--)
+        {
             temp2 = temp1;
             temp1 = temp1->next;
         }
@@ -84,15 +104,20 @@ public:
         delete temp1;
     }
 
-    void print() {
-        Node<T> *temp = head;
+    // print all the values
 
-        if (head == nullptr) {
-            std::cout << "List empty" << std::endl;
+    void print()
+    {
+        Node *temp = head;
+
+        if (head == NULL)
+        {
+            cout << "List empty" << endl;
         }
 
-        while (temp != nullptr) {
-            std::cout << temp->data << " ";
+        while (temp != NULL)
+        {
+            cout << temp->data << " ";
             temp = temp->next;
         }
     }
