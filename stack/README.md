@@ -101,6 +101,35 @@ The priority order of operators is a crucial aspect of the conversion algorithm.
 - Lowest:
   - Addition (+)
   - Subtraction (-)
+ 
+
+Certainly! Here's the Shunting Yard Algorithm explanation in proper markdown format:
+
+### Shunting Yard Algorithm
+
+The Shunting Yard Algorithm, developed by Dijkstra, converts infix notation to postfix notation. Two main data structures are used: a stack and a queue, implemented using an array.
+
+#### Data Structures Overview:
+
+- **Queue (FIFO - First In, First Out):**
+  - Adding data: Push onto the back.
+  - Removing data: Pop from the front.
+
+- **Stack (LIFO - Last In, First Out):**
+  - Adding data: Push onto the top.
+  - Removing data: Pop from the top.
+
+#### Algorithm Steps for shuting yard:
+
+1. **Parse the expression from left to right.**
+2. **If operand, output to the results queue immediately.**
+3. **If operator:**
+   - If the operator stack is empty, push the incoming operator onto the stack.
+   - If the incoming operator has higher precedence than the top of the operator stack, push it onto the stack.
+   - If equal precedence, pop the top operator, output to the queue, and push the incoming operator onto the stack.
+   - If lower precedence, pop the top operator, output to the queue, and test the incoming operator with the new top of the stack.
+4. **Once the whole expression is parsed, pop all remaining tokens from the operator stack.**
+
 
 **Algorithm Steps:**
 
