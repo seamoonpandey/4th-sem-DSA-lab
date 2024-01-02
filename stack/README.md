@@ -116,7 +116,7 @@ The priority order of operators is a crucial aspect of the conversion algorithm.
 
 **Flowchart:**
 
-![image](https://github.com/seamoonpandey/4th-sem-DSA-lab/assets/115852972/ce9403bd-2ad2-4d93-ade3-cc58e8b292ad)
+![image](https://github.com/seamoonpandey/4th-sem-DSA-lab/assets/115852972/2798bbcd-b266-453a-93f0-bbb11936913d)
 
 ### Example
 
