@@ -6,3 +6,8 @@
 ## Methods
 
 ![image](https://github.com/seamoonpandey/4th-sem-DSA-lab/assets/115852972/4b5641ae-f16a-4f06-a78f-c705f21113ee)
+
+
+## Flowchart for infix to postfix
+
+![image](https://github.com/seamoonpandey/4th-sem-DSA-lab/assets/115852972/ce9403bd-2ad2-4d93-ade3-cc58e8b292ad)
