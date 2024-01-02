@@ -81,34 +81,51 @@ Is the stack empty? No
 
 In this lab, we successfully implemented a stack, providing a versatile data structure capable of handling various scenarios. The step-by-step algorithms elucidate the intricacies of each operation, including push, pop, and peek. The resizing mechanism ensures the stack dynamically adjusts its size to accommodate elements efficiently. This implementation serves as a fundamental building block for understanding data structures and algorithms.
 
-## Applications of Stack
 
-### Conversion from infix expression to postfix expression
+**Applications of Stack:**
+
+Stacks, a fundamental data structure in computer science, find extensive applications in various computational processes. One significant application lies in the efficient parsing and evaluation of mathematical expressions. Stacks facilitate the management of operators and operands during expression evaluation, making them invaluable in the development of compilers, calculators, and interpreters.
+
+**Conversion from Infix Expression to Postfix Expression:**
+
+The conversion from infix to postfix expressions is a critical process employed in the parsing of mathematical expressions. This conversion eliminates the complexities associated with parentheses and operator precedence, simplifying subsequent evaluation. The algorithmic steps involved in this conversion are as follows:
 
 **Operators Priority Order:**
 
-1. Highest:
-   - Exponential (^ or **)
-   - Multiplication (* or X)
-   - Division (/)
-2. Lowest:
-   - Addition (+)
-   - Subtraction (-)
+The priority order of operators is a crucial aspect of the conversion algorithm. The hierarchy is determined as follows:
+
+- Highest:
+  - Exponential (^ or **)
+  - Multiplication (* or X)
+  - Division (/)
+- Lowest:
+  - Addition (+)
+  - Subtraction (-)
 
 **Algorithm Steps:**
 
 1. Initialize an empty stack to hold operators.
 2. Read each item from the input infix expression.
-   - If the item is an operand, append it to the postfix string.
-   - If the item is "(", push it onto the stack.
-   - If the item is an operator:
-     - If the stack is empty or the operator has higher precedence than the one on top of the stack, push it onto the stack.
-     - If the operator has lower precedence than the one on top of the stack, pop the operator from the stack and append it to the postfix string. Then, push the current operator onto the stack.
-   - If the item is ")", pop operators from the stack and append them to the postfix string until a "(" is encountered on the stack (remove "(").
-3. If the end of the infix expression is reached, pop any remaining operators from the stack and append them to the postfix string.
+3. If the item is an operand, append it to the postfix string.
+4. If the item is "(", push it onto the stack.
+5. If the item is an operator:
+   - If the stack is empty or the operator has higher precedence than the one on top of the stack, push it onto the stack.
+   - If the operator has lower precedence than the one on top of the stack, pop the operator from the stack and append it to the postfix string. Then, push the current operator onto the stack.
+6. If the item is ")", pop operators from the stack and append them to the postfix string until a "(" is encountered on the stack (remove "(").
+7. If the end of the infix expression is reached, pop any remaining operators from the stack and append them to the postfix string.
+
+**Flowchart:**
+
+![image](https://github.com/seamoonpandey/4th-sem-DSA-lab/assets/115852972/ce9403bd-2ad2-4d93-ade3-cc58e8b292ad)
 
 ### Example
 
-Input Infix Expression: A + (B *C - (D / E ^ F)* G) * H
+Input Infix Expression: 
+```bash
+A + (B *C - (D / E ^ F)* G) * H
+```
 
-Output Postfix Expression: ABC*DEF^/G*-H*
+Output Postfix Expression:
+```bash
+ABC*DEF^/G*-H*
+```
