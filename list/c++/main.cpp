@@ -1,8 +1,8 @@
 #include "linked_list.h"
-
+using namespace std;
 int main()
 {
-    Linkedlist list;
+    LinkedList<int> list;
 
     list.insertNodeAtEnd(1);
     list.insertNodeAtEnd(2);
