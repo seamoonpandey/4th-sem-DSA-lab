@@ -119,3 +119,16 @@ void deleteNode(Linkedlist *list, int index)
     temp2->next = temp1->next;
     free(temp1);
 }
+
+void reverseList(Linkedlist *list) {
+    Node *prev = NULL, *nextNode = NULL;
+
+    while (list->head != NULL) {
+        nextNode = list->head->next;
+        list->head->next = prev;
+        prev = list->head;
+        list->head = nextNode;
+    }
+
+    list->head = prev;
+}
