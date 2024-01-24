@@ -56,8 +56,6 @@ A Queue is a linear data structure. This data structure follows a particular ord
 4. Increment front pointer to point to the next available data element.
 5. Return success.
 
-Certainly, mate! Let's fill in the remaining sections of your lab report.
-
 ## 3. Results
 
 In this section, you can include any experimental results or observations from implementing and testing your queue. If you have run any code to demonstrate the functionality of the queue or to showcase specific scenarios (like overflow and underflow conditions), you can present the output here. It's also a good place to include any performance metrics or insights gained during testing.
