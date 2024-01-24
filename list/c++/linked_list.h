@@ -11,7 +11,7 @@ public:
     {
         this->data = data;
         this->next = NULL;
-    }
+    }Pque
 
     friend class Linkedlist;
 };

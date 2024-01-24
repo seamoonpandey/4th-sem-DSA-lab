@@ -44,8 +44,7 @@ int Queue::dequeue()
         std::cout << "Queue is empty" << std::endl;
     else
     {
-        x = Q[front + 1];
-        front++;
+        x = Q[front++];
     }
     return x;
 }
