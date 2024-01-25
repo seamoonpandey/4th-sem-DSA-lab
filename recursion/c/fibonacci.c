@@ -5,7 +5,7 @@ int fibonacci(int n)
 {
     if (n < 0)
     {
-        fprintf(stderr, "cannot find fibonacci term for negative index");
+        puts("Cannot find fibonacci term for negative index");
         exit(1);
     }
     else if (n < 2)
