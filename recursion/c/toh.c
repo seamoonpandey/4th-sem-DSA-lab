@@ -15,6 +15,6 @@ void tower(int  n, char begin, char end, char aux)
 int main()
 {
 	int n = 3;
-	tower(n, 'x','y','z');
+	tower(n, 'x','z','y');
 	return 0;
 }
