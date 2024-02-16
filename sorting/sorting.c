@@ -48,13 +48,13 @@ int main()
     // take the array input section or say something like that
 
     int n;
-    printf("Enter the length of array");
+    printf("Enter the length of array\t");
     scanf("%d", &n);
 
     // now the part is to take the whole array into account
 
     int array[n];
-    printf("Enter the array with separated whitespaces");
+    printf("Enter the array with separated whitespaces\t");
     for (int i = 0; i < n; i++)
         scanf("%d", &array[i]);
 
